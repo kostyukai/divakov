@@ -19,12 +19,10 @@ main:
 	pushl $fmt_strf
 	call scanf
 	addl $12, %esp
-	
-	movl flt_empt, %eax 
+	movl flt_empt, %eax
 	movl $64, %ecx 
 	jmp skip
 pre:
-//mlad razr
 	movl $flt_empt, %eax
 	movl (%eax), %ebx
 	movl %ebx, %eax
