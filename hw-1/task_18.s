@@ -1,7 +1,10 @@
 .data
 
+fmt_strd:
+	.string "%d"
+
 fmt_str:
-	.string "first summ of numbers until it exceeding 10000 = %d\n"
+	.string "%d\n"
 
 int_1:
 	.space 4
@@ -16,11 +19,18 @@ main:
 	movl %esp, %ebp
 	movl $0, %ebx
 	movl $1, %eax
+	
+	pushl $int_1
+	pushl $fmt_strd
+	call scanf
+	addl $8, %esp
+	movl int_1, %edx
 
 //calculate the summ of numbers
 summ:
-//while summ is less than 10000
-	cmpl $10000, %ebx
+	
+//while do 
+	cmpl %edx, %ebx
 	jg ex
 	addl %eax, %ebx
 	incl %eax
