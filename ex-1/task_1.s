@@ -8,6 +8,9 @@ eof:
 
 .comm string, 256, 4
 
+str_enter:
+	.string "\n"
+
 str_fmtc:
 	.string "%c"
 
@@ -51,6 +54,10 @@ find_eof:
 end:
 	pushl %edx
 	pushl $str_out
+	call printf
+	addl $8, %esp
+	
+	pushl $str_enter
 	call printf
 	addl $8, %esp
 	
