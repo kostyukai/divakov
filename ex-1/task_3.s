@@ -1,5 +1,8 @@
 	.data
 
+str_enter:
+	.string "\n"
+
 str_fmtd:
 	.string "%d"
 str_fmtc:
@@ -61,6 +64,10 @@ inv:
 	
 	movl temp2, %ecx
 	loop next
+	
+	pushl $str_enter
+	call printf
+	addl $8, %esp
 
 	movl %ebp, %esp
 	popl %ebp
