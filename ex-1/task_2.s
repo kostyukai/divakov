@@ -9,6 +9,8 @@ fmt_strd:
 	.string "%u"
 fmt_stro:
 	.string "2^32+%d"
+str_enter:
+	.string "\n"
 	
 .text
 
@@ -82,7 +84,11 @@ ok:
 	call printf
 	addl $8, %esp
 
-end:
+end:	
+	movl $0, %eax
+	pushl $str_enter
+	call printf
+	addl $8, %esp
 	movl %ebp, %esp
 	popl %ebp
 	ret
