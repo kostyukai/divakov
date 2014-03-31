@@ -6,7 +6,7 @@
 eof:
 	.space 1
 
-.comm string, 256, 1
+.comm string, 256, 4
 
 str_fmtc:
 	.string "%c"
@@ -39,6 +39,7 @@ main:
 	movl $string, %ebx
 	movb eof, %al	
 	movl $0, %edx
+	movl $256, %ecx
 
 find_eof:
 	cmpl (%ebx), %eax
