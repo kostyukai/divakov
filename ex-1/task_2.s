@@ -89,7 +89,7 @@ end:
 	call printf
 	addl $8, %esp
 	
-	movl $8, %eax
+	movl $0, %eax
 	movl %ebp, %esp
 	popl %ebp
 	ret
