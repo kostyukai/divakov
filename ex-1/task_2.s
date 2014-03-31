@@ -85,10 +85,11 @@ ok:
 	addl $8, %esp
 
 end:	
-	movl $0, %eax
 	pushl $str_enter
 	call printf
 	addl $8, %esp
+	
+	movl $8, %eax
 	movl %ebp, %esp
 	popl %ebp
 	ret
