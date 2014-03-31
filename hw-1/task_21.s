@@ -63,11 +63,12 @@ new:
 	jmp cnt
 fin:	
 	pushl %ebx
-	pushl $str_fmt
+	pushl $str_out
 	call printf
 	addl $8, %esp
 
 //epilogue
+	movl $0, %eax
 	movl %ebp, %esp
 	popl %ebp
 	ret

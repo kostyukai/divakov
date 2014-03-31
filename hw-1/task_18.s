@@ -25,13 +25,14 @@ main:
 	call scanf
 	addl $8, %esp
 	movl int_1, %edx
-
+	movl $0, %ebx
+	movl $1, %eax
 //calculate the summ of numbers
 summ:
 	
 //while do 
 	cmpl %edx, %ebx
-	jg ex
+	jnb ex
 	addl %eax, %ebx
 	incl %eax
 	jmp summ

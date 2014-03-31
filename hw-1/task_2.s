@@ -4,7 +4,7 @@ int_empt:
 	.space 4
 
 fmt_str:
-	.string "%x"
+	.string "%d"
 fmt_end:
 	.string "\n"
 	

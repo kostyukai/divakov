@@ -50,6 +50,9 @@ print:
 	call printf
 	addl $4, %esp
 
+
+
+addl $8, %esp
 movl $0, %eax
 movl %ebp, %esp
 popl %ebp

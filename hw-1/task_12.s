@@ -4,6 +4,8 @@ fmt_stri:
 	.string "%d %d %d"
 fmt_stro:
 	.string "%d"
+str_end:
+	.string "\n"
 
 int_s:
 	.space 4
@@ -66,6 +68,10 @@ print:
 	pushl $fmt_stro
 	call printf
 	addl $4, %esp
+
+	pushl $str_end
+	call printf
+	addl $8, %esp
 
 movl $0, %eax
 movl %ebp, %esp

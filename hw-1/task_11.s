@@ -15,6 +15,8 @@ str_fmtik:
 str_fmtin:
         .string "neposr %d"
 
+str_end:
+	.string "\n"
 
 .text
 .globl main
@@ -63,7 +65,11 @@ neposr:
 	call printf
 	addl $8, %esp
 	jmp end	
-end:	
+end:
+	pushl $str_end
+	call printf
+	addl $8, %esp
+	
 	movl $0, %eax
 	movl %ebp, %esp
 	popl %ebp

@@ -8,6 +8,8 @@ char_1:
 	.space 1
 float_1:
 	.space 8
+str_end:
+	.string "\n"
 
 str_fmtr:
 	.string "%d %c %lf"
@@ -21,8 +23,8 @@ str_fmtf:
 
 .text
 .globl main
-main:
 
+main:
 //prologue
 	pushl %ebp
 	movl %esp, %ebp
@@ -52,8 +54,11 @@ main:
 	movl %eax, (%esp)
 	call printf
 	addl $12, %esp
-	
-	
+
+	pushl $str_end
+	call printf
+	addl $8, %esp
+
 	movl $0, %eax
 	movl %ebp, %esp
 	popl %ebp

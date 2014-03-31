@@ -1,7 +1,9 @@
 .data
 
+str_end:
+	.string "\n"
 fmt_str:
-	.string "%d/n"
+	.string "%d"
 
 int_1:
 	.space 4
@@ -33,6 +35,10 @@ summ:
 
 	pushl %ebx
 	pushl $fmt_str
+	call printf
+	addl $8, %esp
+	
+	pushl $str_end
 	call printf
 	addl $8, %esp
 

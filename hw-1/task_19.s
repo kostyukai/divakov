@@ -25,6 +25,8 @@ main:
 	call scanf
 	addl $8, %esp
 	movl int_1, %edx
+	movl $0, %ebx
+	movl $1, %eax
 
 //calculate the summ of numbers
 summ:
@@ -34,7 +36,7 @@ summ:
 	incl %eax
 //while sum is less than 10000
 	cmpl %edx, %ebx
-	jg ex
+	jnb ex
 	jmp summ
 ex:
 	pushl %ebx
