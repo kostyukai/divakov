@@ -38,10 +38,10 @@ main:
 	jg lg
 	
 eq:
-	pushl $fmt_strl
+	pushl $fmt_stre
 	jmp print
 le:
-	pushl $fmt_stre
+	pushl $fmt_strl
 	jmp print
 lg:
 	pushl $fmt_strb
