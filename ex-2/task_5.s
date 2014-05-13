@@ -8,6 +8,8 @@ str_fmti:
 	.string "%d"
 str_fmt:
 	.string "%s"
+str_ent:
+	.string "\n"
 str_1:
 	.space 12
 .text
@@ -50,6 +52,10 @@ main:
 	pushl $str_fmt
 	call printf
 	addl $8, %esp
+	
+	pushl $str_ent
+	call printf
+	addl $4, %esp
 	
 	movl $0, %eax
 	movl %ebp, %esp
